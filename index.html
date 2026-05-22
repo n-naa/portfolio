@@ -15,7 +15,7 @@
   --serif:'Cormorant Garamond',serif;--sans:'Noto Sans JP',sans-serif;--serif-jp:'Noto Serif JP',serif;
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--bg);color:var(--stone-900);font-size:15px;font-weight:300;line-height:1.8}
+body{font-family:var(--sans);background:var(--bg);color:var(--stone-900);font-size:16px;font-weight:300;line-height:1.8}
 a{color:inherit;text-decoration:none}
 
 /* NAV */
@@ -23,38 +23,40 @@ nav{border-bottom:1px solid var(--line);background:var(--white);position:sticky;
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px;max-width:800px;margin:0 auto;padding:0 32px}
 .nav-logo{font-family:var(--serif);font-size:1.1rem;font-weight:300;letter-spacing:.08em;color:var(--stone-700)}
 .nav-links{display:flex;gap:24px;list-style:none}
-.nav-links a{font-size:11px;letter-spacing:.12em;color:var(--stone-500);transition:color .2s}
+.nav-links a{font-size:12px;letter-spacing:.12em;color:var(--stone-500);transition:color .2s}
 .nav-links a:hover{color:var(--stone-900)}
 
 /* LAYOUT */
 .wrap{max-width:800px;margin:0 auto;padding:0 32px}
 section{padding:64px 0;border-bottom:1px solid var(--line)}
+section:nth-of-type(odd){background:var(--stone-100)}
+section:nth-of-type(even){background:var(--white)}
 .sh{display:flex;align-items:baseline;gap:16px;margin-bottom:40px}
 .sh-en{font-family:var(--serif);font-size:1.8rem;font-weight:300;letter-spacing:.04em;color:var(--stone-900)}
-.sh-jp{font-size:11px;letter-spacing:.2em;color:var(--stone-500)}
-.sh-num{font-family:var(--serif);font-size:11px;color:var(--stone-300);margin-left:auto}
-.btn{display:inline-block;font-size:11px;letter-spacing:.2em;color:var(--stone-700);border:1px solid var(--stone-300);padding:13px 32px;transition:all .25s;cursor:pointer;background:none;font-family:var(--sans)}
+.sh-jp{font-size:12px;letter-spacing:.2em;color:var(--stone-500)}
+.sh-num{font-family:var(--serif);font-size:12px;color:var(--stone-300);margin-left:auto}
+.btn{display:inline-block;font-size:12px;letter-spacing:.2em;color:var(--stone-700);border:1px solid var(--stone-300);padding:13px 32px;transition:all .25s;cursor:pointer;background:none;font-family:var(--sans)}
 .btn:hover{background:var(--stone-900);color:var(--white);border-color:var(--stone-900)}
 .btn-fill{background:var(--stone-900);color:var(--white);border-color:var(--stone-900)}
 .btn-fill:hover{background:var(--stone-700);border-color:var(--stone-700)}
 
 /* HERO */
 .hero{padding:80px 0 72px;border-bottom:1px solid var(--line)}
-.hero-inner{max-width:800px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 280px;gap:48px;align-items:center}
+.hero-inner{max-width:800px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 240px;gap:32px;align-items:center}
 .hero-tag{font-size:11px;letter-spacing:.2em;color:var(--stone-500);margin-bottom:16px}
 .hero-catch{font-family:var(--serif-jp);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:300;color:var(--stone-900);line-height:1.5;margin-bottom:8px;letter-spacing:.04em}
 .hero-catch em{font-style:normal;border-bottom:1.5px solid var(--stone-300);padding-bottom:2px}
 .hero-sub{font-size:13px;letter-spacing:.12em;color:var(--stone-500);margin-bottom:24px}
-.hero-lead{font-size:15px;color:var(--stone-700);line-height:2;margin-bottom:32px}
-.hero-photo{width:100%;aspect-ratio:3/4;background:var(--stone-200);border:1px solid var(--line);overflow:hidden}
+.hero-lead{font-size:15px;color:var(--stone-900);line-height:2;margin-bottom:32px}
+.hero-photo{width:85%;aspect-ratio:3/4;background:var(--stone-200);border:1px solid var(--line);overflow:hidden}
 .hero-photo img{width:100%;height:100%;object-fit:cover}
 
 /* FIT */
-.fit-section{background:var(--stone-100)}
+.fit-section{}
 .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
 .fit-card{background:var(--white);border:1px solid var(--line);padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
 .fit-chk{width:18px;height:18px;border:1px solid var(--stone-300);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.fit-text{font-size:14px;color:var(--stone-700);line-height:1.7}
+.fit-text{font-size:14px;color:var(--stone-900);line-height:1.7}
 
 /* BENEFITS */
 .benefit-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line)}
@@ -64,26 +66,27 @@ section{padding:64px 0;border-bottom:1px solid var(--line)}
 .benefit-num{font-family:var(--serif);font-size:2rem;font-weight:300;color:var(--stone-300);font-style:italic}
 .benefit-content{padding:24px 28px}
 .benefit-title{font-size:15px;font-weight:500;color:var(--stone-900);margin-bottom:6px}
-.benefit-desc{font-size:13px;color:var(--stone-500);line-height:1.9}
+.benefit-desc{font-size:14px;color:var(--stone-700);line-height:1.9}
 
 /* WORKS */
 .works-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:16px}
 .stat-item{background:var(--white);padding:24px 28px}
-.stat-label{font-size:10px;letter-spacing:.18em;color:var(--stone-500);margin-bottom:8px}
+.stat-label{font-size:12px;letter-spacing:.18em;color:var(--stone-500);margin-bottom:8px}
 .stat-num{font-family:var(--serif);font-size:2.8rem;font-weight:300;color:var(--stone-900);line-height:1;margin-bottom:8px}
 .stat-num span{font-size:1rem;color:var(--stone-500);margin:0 4px}
-.stat-desc{font-size:13px;color:var(--stone-700);line-height:1.9}
+.stat-desc{font-size:14px;color:var(--stone-700);line-height:1.9}
 .chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:14px}
 .chart-item{background:var(--white);padding:18px 22px}
-.chart-label{font-size:10px;letter-spacing:.14em;color:var(--stone-500);margin-bottom:10px}
-.note-box{padding:16px 20px;background:var(--stone-100);border-left:2px solid var(--stone-300);font-size:13px;color:var(--stone-700);line-height:1.9;margin-bottom:20px}
-.other-title{font-size:10px;letter-spacing:.2em;color:var(--stone-500);margin-bottom:10px;text-transform:uppercase}
+.chart-label{font-size:12px;letter-spacing:.14em;color:var(--stone-500);margin-bottom:10px}
+.note-box{padding:16px 20px;background:var(--stone-100);border-left:2px solid var(--stone-300);font-size:14px;color:var(--stone-700);line-height:1.9;margin-bottom:20px}
+.other-title{font-size:12px;letter-spacing:.2em;color:var(--stone-500);margin-bottom:10px;text-transform:uppercase}
 .other-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.other-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--stone-700)}
+.other-item{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--stone-700)}
 .chk-sm{width:16px;height:16px;border:1px solid var(--stone-300);flex-shrink:0;display:flex;align-items:center;justify-content:center}
 
 /* WORKS ギャラリー */
-.works-cat-label{font-size:10px;letter-spacing:.2em;color:var(--stone-500);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line);text-transform:uppercase}
+.works-common-note{font-size:12px;color:var(--stone-500);margin-bottom:14px;padding:10px 14px;background:var(--stone-100);border-left:2px solid var(--stone-300)}
+.works-cat-label{font-size:12px;letter-spacing:.2em;color:var(--stone-500);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line);text-transform:uppercase}
 .works-cat{margin-bottom:40px}
 .works-cat:last-child{margin-bottom:0}
 .img-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
@@ -93,11 +96,19 @@ section{padding:64px 0;border-bottom:1px solid var(--line)}
 .img-thumb{background:var(--stone-200);border:1px solid var(--line);overflow:hidden}
 .img-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .img-thumb-sq{aspect-ratio:1/1}
+.img-thumb-ig{aspect-ratio:4/5}
+.img-thumb-apparel{aspect-ratio:1672/941}
+.img-thumb-farm{aspect-ratio:1920/600}
+.img-thumb-richmenu{aspect-ratio:2500/1686}
+.img-thumb-linemsg{aspect-ratio:1080/1080}
+.img-thumb-linecard{aspect-ratio:1322/1190}
 .img-thumb-wide{aspect-ratio:16/9}
 .img-thumb-lp{aspect-ratio:2/3}
 .img-thumb-line{aspect-ratio:16/9}
-.img-client{font-size:10px;letter-spacing:.08em;color:var(--stone-500)}
-.img-work{font-size:12px;color:var(--stone-700);line-height:1.6;font-weight:400}
+.vid-thumb{aspect-ratio:9/16;background:var(--stone-900);border:1px solid var(--line);overflow:hidden}
+.vid-thumb video{width:100%;height:100%;object-fit:cover;display:block}
+.img-client{font-size:12px;letter-spacing:.08em;color:var(--stone-500)}
+.img-work{font-size:13px;color:var(--stone-700);line-height:1.6;font-weight:400}
 
 /* CASE STUDY */
 .case-grid{display:grid;grid-template-columns:1fr 40px 1fr;border:1px solid var(--line);margin-bottom:16px}
@@ -105,43 +116,44 @@ section{padding:64px 0;border-bottom:1px solid var(--line)}
 .case-before{background:var(--stone-100)}
 .case-after{background:var(--white)}
 .case-arrow-col{display:flex;align-items:center;justify-content:center;background:var(--stone-200)}
-.case-label{font-size:10px;letter-spacing:.2em;color:var(--stone-500);margin-bottom:14px;text-transform:uppercase}
-.case-point{font-size:13px;color:var(--stone-700);margin-bottom:8px;padding-left:14px;position:relative;line-height:1.7}
+.case-label{font-size:12px;letter-spacing:.2em;color:var(--stone-500);margin-bottom:14px;text-transform:uppercase}
+.case-point{font-size:14px;color:var(--stone-700);margin-bottom:8px;padding-left:14px;position:relative;line-height:1.7}
 .case-point::before{content:"·";position:absolute;left:0;color:var(--stone-300)}
 .case-img-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:16px}
-.case-img{background:var(--stone-200);border:1px solid var(--line);aspect-ratio:1/1;overflow:hidden}
-.case-img img{width:100%;height:100%;object-fit:cover}
+.case-img{background:var(--stone-200);border:1px solid var(--line);overflow:hidden}
+.case-img img{width:100%;height:auto;display:block;object-fit:contain}
 .case-improved{border:1px solid var(--line)}
-.case-imp-title{font-size:10px;letter-spacing:.15em;color:var(--stone-500);padding:10px 16px;border-bottom:1px solid var(--line);background:var(--stone-100);text-transform:uppercase}
+.case-imp-title{font-size:12px;letter-spacing:.15em;color:var(--stone-500);padding:10px 16px;border-bottom:1px solid var(--line);background:var(--stone-100);text-transform:uppercase}
 .case-imp-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
-.case-imp-item{background:var(--white);padding:12px 16px;display:flex;align-items:center;gap:10px;font-size:13px;color:var(--stone-700)}
+.case-imp-item{background:var(--white);padding:12px 16px;display:flex;align-items:center;gap:10px;font-size:14px;color:var(--stone-700)}
 
 /* SERVICES */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
 .svc-item{background:var(--white);padding:20px 18px}
 .svc-name{font-size:14px;font-weight:500;color:var(--stone-900);margin-bottom:4px}
-.svc-desc{font-size:12px;color:var(--stone-500);line-height:1.6}
+.svc-desc{font-size:13px;color:var(--stone-700);line-height:1.6}
 
 /* PRICE */
-.price-note{font-size:13px;color:var(--stone-500);margin-bottom:28px;line-height:1.9;padding-bottom:20px;border-bottom:1px solid var(--line)}
-.price-block{margin-bottom:28px}
-.price-cat{font-size:10px;letter-spacing:.22em;color:var(--stone-500);margin-bottom:10px;text-transform:uppercase}
-.ptable{width:100%;border-collapse:collapse}
+.price-note{font-size:14px;color:var(--stone-700);margin-bottom:28px;line-height:1.9;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.price-block{margin-bottom:32px}
+.price-cat{font-size:11px;letter-spacing:.25em;color:var(--white);background:var(--stone-700);padding:6px 14px;display:inline-block;margin-bottom:0;text-transform:uppercase}
+.ptable{width:100%;border-collapse:collapse;border:1px solid var(--line)}
 .ptable tr{border-bottom:1px solid var(--line)}
 .ptable tr:last-child{border-bottom:none}
-.ptable th{font-size:11px;letter-spacing:.1em;color:var(--stone-500);font-weight:400;text-align:left;padding:10px 14px;border-bottom:1px solid var(--stone-300);background:var(--stone-100)}
-.ptable td{padding:14px 14px;font-size:14px;color:var(--stone-700);vertical-align:top;line-height:1.75;background:var(--white)}
-.td-name{color:var(--stone-900);font-weight:500}
-.td-price{font-weight:500;color:var(--stone-900);font-size:15px;display:block}
-.td-sub{font-size:11px;color:var(--stone-500);display:block;margin-top:4px}
-.price-footer{margin-top:20px;padding:18px 22px;background:var(--stone-100);border-left:2px solid var(--stone-300);font-size:13px;color:var(--stone-700);line-height:1.9}
+.ptable tr:nth-child(even) td{background:var(--stone-100)}
+.ptable th{font-size:12px;letter-spacing:.1em;color:var(--stone-500);font-weight:400;text-align:left;padding:10px 16px;border-bottom:2px solid var(--stone-300);background:var(--stone-200)}
+.ptable td{padding:16px 16px;font-size:14px;color:var(--stone-700);vertical-align:middle;line-height:1.6;background:var(--white)}
+.td-name{color:var(--stone-900);font-weight:500;font-size:15px}
+.td-price{font-weight:700;color:var(--accent);font-size:1.15rem;display:block;letter-spacing:.02em}
+.td-sub{font-size:12px;color:var(--stone-500);display:block;margin-top:4px;line-height:1.6}
+.price-footer{margin-top:20px;padding:18px 22px;background:var(--stone-100);border-left:2px solid var(--stone-300);font-size:14px;color:var(--stone-700);line-height:1.9}
 
 /* FLOW */
 .flow-list{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
 .flow-item{background:var(--white);padding:24px 20px}
 .flow-num{font-family:var(--serif);font-size:2.2rem;font-weight:300;color:var(--stone-200);margin-bottom:12px;font-style:italic}
 .flow-title{font-size:14px;font-weight:500;color:var(--stone-900);margin-bottom:8px}
-.flow-desc{font-size:13px;color:var(--stone-500);line-height:1.8}
+.flow-desc{font-size:14px;color:var(--stone-700);line-height:1.8}
 
 /* PROFILE */
 .profile-card{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
@@ -149,10 +161,10 @@ section{padding:64px 0;border-bottom:1px solid var(--line)}
 .profile-sub{background:var(--stone-100);padding:32px 32px}
 .profile-name{font-family:var(--serif-jp);font-size:1.5rem;font-weight:300;color:var(--stone-900);margin-bottom:2px}
 .profile-name-en{font-family:var(--serif);font-size:12px;color:var(--stone-500);margin-bottom:20px;letter-spacing:.12em}
-.profile-desc{font-size:13px;color:var(--stone-700);line-height:2;margin-bottom:20px}
+.profile-desc{font-size:14px;color:var(--stone-700);line-height:2;margin-bottom:20px}
 .profile-tags{display:flex;flex-wrap:wrap;gap:6px}
-.p-tag{font-size:11px;color:var(--stone-500);border:1px solid var(--line);padding:4px 12px}
-.tools-title{font-size:10px;letter-spacing:.2em;color:var(--stone-500);margin-bottom:16px;text-transform:uppercase}
+.p-tag{font-size:12px;color:var(--stone-500);border:1px solid var(--line);padding:4px 12px}
+.tools-title{font-size:12px;letter-spacing:.2em;color:var(--stone-500);margin-bottom:16px;text-transform:uppercase}
 .tool-item{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--stone-700);margin-bottom:10px}
 .tool-dot{width:5px;height:5px;background:var(--stone-300);border-radius:50%;flex-shrink:0}
 
@@ -160,39 +172,39 @@ section{padding:64px 0;border-bottom:1px solid var(--line)}
 .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
 .contact-main{background:var(--white);padding:48px 40px}
 .contact-lead{font-family:var(--serif-jp);font-size:1.8rem;font-weight:300;color:var(--stone-900);line-height:1.6;margin-bottom:14px}
-.contact-sub{font-size:13px;color:var(--stone-500);line-height:1.9;margin-bottom:36px}
+.contact-sub{font-size:14px;color:var(--stone-700);line-height:1.9;margin-bottom:36px}
 .contact-info{background:var(--stone-100);padding:48px 40px}
-.contact-info-title{font-size:10px;letter-spacing:.2em;color:var(--stone-500);margin-bottom:28px;text-transform:uppercase}
+.contact-info-title{font-size:12px;letter-spacing:.2em;color:var(--stone-500);margin-bottom:28px;text-transform:uppercase}
 .contact-link-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px}
-.contact-link-label{font-size:10px;letter-spacing:.15em;color:var(--stone-500);width:50px;flex-shrink:0;padding-top:3px;text-transform:uppercase}
-.contact-link-val{font-size:14px;color:var(--stone-700)}
+.contact-link-label{font-size:12px;letter-spacing:.15em;color:var(--stone-500);width:50px;flex-shrink:0;padding-top:3px;text-transform:uppercase}
+.contact-link-val{font-size:15px;color:var(--stone-700)}
 
 /* FOOTER */
 footer{padding:28px 32px;max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
 .footer-name{font-family:var(--serif);font-size:.9rem;font-weight:300;color:var(--stone-500);letter-spacing:.1em}
-.footer-copy{font-size:10px;color:var(--stone-300);letter-spacing:.08em}
+.footer-copy{font-size:12px;color:var(--stone-300);letter-spacing:.08em}
 
 /* MODAL */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(30,27,23,.6);z-index:100;align-items:center;justify-content:center}
 .modal-overlay.open{display:flex}
 .modal{background:var(--white);padding:40px;max-width:420px;width:90%;max-height:80vh;overflow-y:auto}
 .modal-title{font-family:var(--serif-jp);font-size:1.1rem;font-weight:300;color:var(--stone-900);margin-bottom:8px}
-.modal-lead{font-size:12px;color:var(--stone-500);margin-bottom:24px;line-height:1.8}
+.modal-lead{font-size:13px;color:var(--stone-500);margin-bottom:24px;line-height:1.8}
 .quiz-opts{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
-.quiz-opt{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--line);font-size:13px;color:var(--stone-700);cursor:pointer;transition:all .15s;background:var(--bg)}
+.quiz-opt{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--line);font-size:14px;color:var(--stone-700);cursor:pointer;transition:all .15s;background:var(--bg)}
 .quiz-opt:hover{border-color:var(--stone-300);background:var(--white)}
 .quiz-opt input{accent-color:var(--stone-700)}
-.quiz-btn{font-size:11px;letter-spacing:.2em;color:var(--stone-700);border:1px solid var(--stone-300);padding:10px 24px;background:none;font-family:var(--sans);cursor:pointer;transition:all .2s}
+.quiz-btn{font-size:12px;letter-spacing:.2em;color:var(--stone-700);border:1px solid var(--stone-300);padding:10px 24px;background:none;font-family:var(--sans);cursor:pointer;transition:all .2s}
 .quiz-btn:hover{background:var(--stone-900);color:var(--white);border-color:var(--stone-900)}
-.quiz-result{display:none;margin-top:20px;padding:20px;background:var(--stone-100);font-size:13px;color:var(--stone-700);line-height:1.9;border-left:2px solid var(--stone-300)}
+.quiz-result{display:none;margin-top:20px;padding:20px;background:var(--stone-100);font-size:14px;color:var(--stone-700);line-height:1.9;border-left:2px solid var(--stone-300)}
 .quiz-result.show{display:block}
-.modal-close{margin-top:16px;font-size:11px;letter-spacing:.15em;color:var(--stone-500);background:none;border:none;cursor:pointer;font-family:var(--sans);padding:0;display:block}
+.modal-close{margin-top:16px;font-size:12px;letter-spacing:.15em;color:var(--stone-500);background:none;border:none;cursor:pointer;font-family:var(--sans);padding:0;display:block}
 .modal-close:hover{color:var(--stone-900)}
 
 /* RESPONSIVE */
 @media(max-width:640px){
   .hero-inner{grid-template-columns:1fr;gap:32px}
-  .hero-photo{aspect-ratio:4/3;order:-1}
+  .hero-photo{aspect-ratio:4/3;order:-1;margin-right:0}
   .fit-grid{grid-template-columns:1fr}
   .benefit-item{grid-template-columns:1fr}
   .benefit-num-col{padding:12px;justify-content:flex-start}
@@ -256,7 +268,7 @@ footer{padding:28px 32px;max-width:800px;margin:0 auto;display:flex;justify-cont
     <div class="sh">
       <span class="sh-en">For You</span>
       <span class="sh-jp">こんな方に向いています</span>
-      <span class="sh-num">01</span>
+
     </div>
     <div class="fit-grid">
       <div class="fit-card"><span class="fit-chk"><svg width="9" height="9" viewBox="0 0 9 9" fill="none" stroke="#8A8278" stroke-width="1.5"><polyline points="1,4.5 3.5,7 8,2"/></svg></span><span class="fit-text">「何から頼めばいいか分からない」という方</span></div>
@@ -276,7 +288,7 @@ footer{padding:28px 32px;max-width:800px;margin:0 auto;display:flex;justify-cont
     <div class="sh">
       <span class="sh-en">Benefits</span>
       <span class="sh-jp">依頼するメリット</span>
-      <span class="sh-num">02</span>
+
     </div>
     <div class="benefit-list">
       <div class="benefit-item">
@@ -317,7 +329,7 @@ footer{padding:28px 32px;max-width:800px;margin:0 auto;display:flex;justify-cont
     <div class="sh">
       <span class="sh-en">Works</span>
       <span class="sh-jp">制作実績</span>
-      <span class="sh-num">03</span>
+
     </div>
     <div class="works-stats">
       <div class="stat-item">
@@ -402,43 +414,46 @@ footer{padding:28px 32px;max-width:800px;margin:0 auto;display:flex;justify-cont
     <div class="sh">
       <span class="sh-en">Works</span>
       <span class="sh-jp">SNS 運用代行 — Instagram</span>
-      <span class="sh-num">03</span>
+
     </div>
     <div class="works-cat">
       <div class="works-cat-label">SNS 運用代行 — Instagram</div>
+      <p class="works-common-note">全アカウント共通：投稿デザイン・キャプション・ハッシュタグ選定・プロフィール設計・分析・施策提案</p>
       <div class="img-grid-3">
-        <div class="img-card"><div class="img-thumb img-thumb-sq"></div><div class="img-client">工務店</div><div class="img-work">投稿デザイン・キャプション・ハッシュタグ選定・プロフィール設計・分析・施策提案・月次レポート</div></div>
-        <div class="img-card"><div class="img-thumb img-thumb-sq"></div><div class="img-client">工務店</div><div class="img-work">投稿デザイン・キャプション・ハッシュタグ選定・プロフィール設計・分析・施策提案・月次レポート</div></div>
-        <div class="img-card"><div class="img-thumb img-thumb-sq"></div><div class="img-client">FX</div><div class="img-work">投稿デザイン・キャプション・ハッシュタグ選定・プロフィール設計・分析・施策提案・月次レポート・月次MTG</div></div>
-        <div class="img-card"><div class="img-thumb img-thumb-sq"></div><div class="img-client">ハウスメーカー</div><div class="img-work">投稿デザイン・キャプション・ハッシュタグ選定・プロフィール設計・分析・施策提案・月次レポート・月次MTG</div></div>
-        <div class="img-card"><div class="img-thumb img-thumb-sq"></div><div class="img-client">リフォーム会社</div><div class="img-work">投稿デザイン・キャプション・ハッシュタグ選定・プロフィール設計・分析・施策提案 ※画像はコンテンツ2枚目</div></div>
-        <div class="img-card"><div class="img-thumb img-thumb-sq"></div><div class="img-client">動物用サプリ開発会社</div><div class="img-work">投稿デザイン・キャプション・ハッシュタグ選定・プロフィール設計・分析・施策提案 ※画像はコンテンツ2枚目</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-ig"><img src="image/instagram_01.png" alt="工務店 Instagram投稿"></div><div class="img-client">工務店</div><div class="img-work">＋月次レポート</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-ig"><img src="image/instagram_02.png" alt="工務店 Instagram投稿"></div><div class="img-client">工務店</div><div class="img-work">＋月次レポート</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-ig"><img src="image/instagram_03.png" alt="FX Instagram投稿"></div><div class="img-client">FX</div><div class="img-work">＋月次レポート・月次MTG</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-ig"><img src="image/instagram_04.png" alt="ハウスメーカー Instagram投稿"></div><div class="img-client">ハウスメーカー</div><div class="img-work">＋月次レポート・月次MTG</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-ig"><img src="image/instagram_05.png" alt="リフォーム会社 Instagram投稿"></div><div class="img-client">リフォーム会社</div><div class="img-work">※画像はコンテンツ2枚目</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-ig"><img src="image/instagram_06.png" alt="動物用サプリ開発会社 Instagram投稿"></div><div class="img-client">動物用サプリ開発会社</div><div class="img-work">※画像はコンテンツ2枚目</div></div>
       </div>
     </div>
     <div class="works-cat">
       <div class="works-cat-label">広告クリエイティブ — Meta / Google</div>
       <div class="img-grid-3">
-        <div class="img-card"><div class="img-thumb img-thumb-wide"></div><div class="img-client">Meta広告 / 工務店</div><div class="img-work">静止画バナー 2サイズ展開</div></div>
-        <div class="img-card"><div class="img-thumb img-thumb-wide"></div><div class="img-client">Meta広告 / 有名大学</div><div class="img-work">静止画バナー 2サイズ展開</div></div>
-        <div class="img-card"><div class="img-thumb img-thumb-wide"></div><div class="img-client">Google広告 / 民泊代行</div><div class="img-work">静止画バナー 2サイズ展開</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-sq"><img src="image/adbn_01.png" alt="Meta広告 / 工務店"></div><div class="img-client">Meta広告 / 工務店</div><div class="img-work">静止画バナー 2サイズ展開</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-sq"><img src="image/adbn_02.png" alt="Meta広告 / 有名大学"></div><div class="img-client">Meta広告 / 有名大学</div><div class="img-work">静止画バナー 2サイズ展開</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-sq"><img src="image/adbn_03.png" alt="Meta広告 / 住宅メーカー"></div><div class="img-client">Meta広告 / 住宅メーカー</div><div class="img-work">静止画バナー 2サイズ展開</div></div>
       </div>
     </div>
     <div class="works-cat">
       <div class="works-cat-label">HP クリエイティブ</div>
-      <div class="img-grid-3">
-        <div class="img-card"><div class="img-thumb img-thumb-sq"></div><div class="img-client">ECサイト / アパレル</div><div class="img-work">デザイン</div></div>
-        <div class="img-card"><div class="img-thumb img-thumb-sq"></div><div class="img-client">HP / 農園</div><div class="img-work">デザイン＋コーディング</div></div>
-        <div class="img-card"><div class="img-thumb img-thumb-sq"></div><div class="img-client">HP / 大学</div><div class="img-work">デザイン</div></div>
+      <div class="img-grid-2">
+        <div class="img-card"><div class="img-thumb img-thumb-apparel"><img src="image/hpbn_01.png" alt="ECサイト / アパレル"></div><div class="img-client">ECサイト / アパレル</div><div class="img-work">デザイン</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-apparel"><img src="image/hpbn_02.png" alt="ECサイト / アパレル"></div><div class="img-client">ECサイト / アパレル</div><div class="img-work">デザイン</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-farm"><img src="image/hpbn_03.png" alt="HP / 農園"></div><div class="img-client">HP / 農園</div><div class="img-work">デザイン＋コーディング</div></div>
       </div>
     </div>
     <div class="works-cat">
       <div class="works-cat-label">LINE クリエイティブ — リッチメニュー / メッセージ</div>
-      <div class="img-grid-5" style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px">
-        <div class="img-card"><div class="img-thumb img-thumb-line"></div><div class="img-client">LINEリッチメニュー / 食品</div><div class="img-work">デザイン・実装</div></div>
-        <div class="img-card"><div class="img-thumb img-thumb-line"></div><div class="img-client">LINEリッチメニュー / アパレル</div><div class="img-work">デザイン・実装</div></div>
-        <div class="img-card"><div class="img-thumb img-thumb-line"></div><div class="img-client">LINEメッセージ / アパレル</div><div class="img-work">デザイン・メッセージ配信</div></div>
-        <div class="img-card"><div class="img-thumb img-thumb-line"></div><div class="img-client">LINEメッセージ / アパレル</div><div class="img-work">デザイン・メッセージ配信</div></div>
-        <div class="img-card"><div class="img-thumb img-thumb-line"></div><div class="img-client">LINEメッセージ / アパレル</div><div class="img-work">デザイン・メッセージ配信</div></div>
+      <div class="img-grid-2" style="margin-bottom:16px">
+        <div class="img-card"><div class="img-thumb img-thumb-richmenu"><img src="image/line-richmenu_01.png" alt="LINEリッチメニュー / 食品"></div><div class="img-client">LINEリッチメニュー / 食品</div><div class="img-work">デザイン・実装</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-richmenu"><img src="image/line-richmenu_02.png" alt="LINEリッチメニュー / アパレル"></div><div class="img-client">LINEリッチメニュー / アパレル</div><div class="img-work">デザイン・実装</div></div>
+      </div>
+      <div class="img-grid-3">
+        <div class="img-card"><div class="img-thumb img-thumb-linemsg"><img src="image/line-message_01.png" alt="LINEメッセージ / アパレル"></div><div class="img-client">LINEメッセージ / アパレル</div><div class="img-work">デザイン・メッセージ配信</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-linemsg"><img src="image/line-message_02.png" alt="LINEメッセージ / アパレル"></div><div class="img-client">LINEメッセージ / アパレル</div><div class="img-work">デザイン・メッセージ配信</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-linecard"><img src="image/line-message-card_01.png" alt="LINEメッセージカード / アパレル"></div><div class="img-client">LINEメッセージカード / アパレル</div><div class="img-work">デザイン・メッセージ配信</div></div>
       </div>
     </div>
     <div class="works-cat">
@@ -451,8 +466,8 @@ footer{padding:28px 32px;max-width:800px;margin:0 auto;display:flex;justify-cont
     <div class="works-cat">
       <div class="works-cat-label">動画制作 — SNS / ショート</div>
       <div class="img-grid-2">
-        <div class="img-card"><div class="img-thumb img-thumb-wide"></div><div class="img-client">SNS / キャンプ飯</div><div class="img-work">編集・字幕・音声</div></div>
-        <div class="img-card"><div class="img-thumb img-thumb-wide"></div><div class="img-client">SNS / キャンプ飯</div><div class="img-work">編集・字幕・音声</div></div>
+        <div class="img-card"><div class="vid-thumb"><video src="image/short-movie_01.mp4" controls playsinline muted loop></video></div><div class="img-client">SNS / キャンプ飯</div><div class="img-work">編集・字幕・音声</div></div>
+        <div class="img-card"><div class="vid-thumb"><video src="image/short-movie_02.mp4" controls playsinline muted loop></video></div><div class="img-client">SNS / キャンプ飯</div><div class="img-work">編集・字幕・音声</div></div>
       </div>
     </div>
   </div>
@@ -464,7 +479,7 @@ footer{padding:28px 32px;max-width:800px;margin:0 auto;display:flex;justify-cont
     <div class="sh">
       <span class="sh-en">Case Study</span>
       <span class="sh-jp">運用改善の一例</span>
-      <span class="sh-num">04</span>
+
     </div>
     <div class="case-grid">
       <div class="case-col case-before">
@@ -473,7 +488,7 @@ footer{padding:28px 32px;max-width:800px;margin:0 auto;display:flex;justify-cont
         <div class="case-point">ターゲットが曖昧</div>
         <div class="case-point">プロフィールが最適化されていない</div>
         <div class="case-img-grid">
-          <div class="case-img" style="grid-column:1/-1;aspect-ratio:16/9"><img src="image/case-study_before.jpg" alt="改善前"></div>
+          <div class="case-img" style="grid-column:1/-1"><img src="image/case-study_before.jpg" alt="改善前"></div>
         </div>
       </div>
       <div class="case-arrow-col">
@@ -485,7 +500,7 @@ footer{padding:28px 32px;max-width:800px;margin:0 auto;display:flex;justify-cont
         <div class="case-point">ターゲットに合わせたコンテンツ設計</div>
         <div class="case-point">プロフィールや導線を最適化し、集客につながる</div>
         <div class="case-img-grid">
-          <div class="case-img" style="grid-column:1/-1;aspect-ratio:16/9"><img src="image/case-study_after.jpg" alt="改善後"></div>
+          <div class="case-img" style="grid-column:1/-1"><img src="image/case-study_after.jpg" alt="改善後"></div>
         </div>
       </div>
     </div>
@@ -509,7 +524,7 @@ footer{padding:28px 32px;max-width:800px;margin:0 auto;display:flex;justify-cont
     <div class="sh">
       <span class="sh-en">Services</span>
       <span class="sh-jp">対応サービス</span>
-      <span class="sh-num">05</span>
+
     </div>
     <div class="svc-grid">
       <div class="svc-item"><div class="svc-name">SNS 運用代行</div><div class="svc-desc">投稿・分析・改善</div></div>
@@ -529,12 +544,12 @@ footer{padding:28px 32px;max-width:800px;margin:0 auto;display:flex;justify-cont
 </section>
 
 <!-- PRICE -->
-<section id="pricing" style="background:var(--white)">
+<section id="pricing">
   <div class="wrap">
     <div class="sh">
       <span class="sh-en">Price</span>
       <span class="sh-jp">料金の目安</span>
-      <span class="sh-num">06</span>
+
     </div>
     <p class="price-note">すべて税抜表示です。案件の規模・内容により変動する場合があります。複数サービスの同時依頼・長期継続の場合はセット料金をご提案します。「予算がこのくらいで何ができる？」というご相談もお気軽にどうぞ。</p>
 
@@ -597,7 +612,7 @@ footer{padding:28px 32px;max-width:800px;margin:0 auto;display:flex;justify-cont
     <div class="sh">
       <span class="sh-en">Work Flow</span>
       <span class="sh-jp">ご依頼の流れ</span>
-      <span class="sh-num">07</span>
+
     </div>
     <div class="flow-list">
       <div class="flow-item"><div class="flow-num">01</div><div class="flow-title">ご相談</div><div class="flow-desc">「こんなこと頼んでいい？」という段階でOK。返信は基本24時間以内。</div></div>
@@ -614,7 +629,7 @@ footer{padding:28px 32px;max-width:800px;margin:0 auto;display:flex;justify-cont
     <div class="sh">
       <span class="sh-en">Profile</span>
       <span class="sh-jp">プロフィール</span>
-      <span class="sh-num">08</span>
+
     </div>
     <div class="profile-card">
       <div class="profile-main">
@@ -657,11 +672,6 @@ footer{padding:28px 32px;max-width:800px;margin:0 auto;display:flex;justify-cont
         <div class="contact-link-item">
           <span class="contact-link-label">Mail</span>
           <span class="contact-link-val">naaaaa.ay216@gmail.com</span>
-        </div>
-        <div class="contact-link-item">
-          <span class="contact-link-label">Instagram</span>
-          <!-- ▼ アカウント名を変更してください -->
-          <span class="contact-link-val">@your_account</span>
         </div>
       </div>
     </div>
