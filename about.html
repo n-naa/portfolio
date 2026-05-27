@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>朝比奈 奈々 ｜ フリーランス Webマーケティング・制作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F9F6F1;--white:#FDFCF9;--stone-100:#F0EDE6;--stone-200:#E2DDD4;
+  --stone-300:#C8C2B5;--stone-500:#8A8278;--stone-700:#4A453E;--stone-900:#1E1B17;
+  --line:#D4CFC8;--accent:#C47A3A;--accent-light:#F5E6D3;
+  --serif:'Cormorant Garamond',serif;--sans:'Noto Sans JP',sans-serif;--serif-jp:'Noto Serif JP',serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--stone-900);font-size:16px;font-weight:300;line-height:1.8}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{border-bottom:1px solid var(--line);background:var(--white);position:sticky;top:0;z-index:50}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px;max-width:800px;margin:0 auto;padding:0 32px}
+.nav-logo{font-family:var(--serif);font-size:1.1rem;font-weight:300;letter-spacing:.08em;color:var(--stone-700)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-size:12px;letter-spacing:.12em;color:var(--stone-500);transition:color .2s}
+.nav-links a:hover{color:var(--stone-900)}
+
+/* LAYOUT */
+.wrap{max-width:800px;margin:0 auto;padding:0 32px}
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+section:nth-of-type(odd){background:var(--stone-100)}
+section:nth-of-type(even){background:var(--white)}
+.sh{display:flex;align-items:baseline;gap:16px;margin-bottom:40px}
+.sh-en{font-family:var(--serif);font-size:1.8rem;font-weight:300;letter-spacing:.04em;color:var(--stone-900)}
+.sh-jp{font-size:12px;letter-spacing:.2em;color:var(--stone-500)}
+.sh-num{font-family:var(--serif);font-size:12px;color:var(--stone-300);margin-left:auto}
+.btn{display:inline-block;font-size:12px;letter-spacing:.2em;color:var(--stone-700);border:1px solid var(--stone-300);padding:13px 32px;transition:all .25s;cursor:pointer;background:none;font-family:var(--sans)}
+.btn:hover{background:var(--stone-900);color:var(--white);border-color:var(--stone-900)}
+.btn-fill{background:var(--stone-900);color:var(--white);border-color:var(--stone-900)}
+.btn-fill:hover{background:var(--stone-700);border-color:var(--stone-700)}
+
+/* HERO */
+.hero{padding:80px 0 72px;border-bottom:1px solid var(--line)}
+.hero-inner{max-width:800px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 270px;gap:32px;align-items:center}
+.hero-tag{font-size:11px;letter-spacing:.2em;color:var(--stone-500);margin-bottom:16px}
+.hero-catch{font-family:var(--serif-jp);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:300;color:var(--stone-900);line-height:1.5;margin-bottom:8px;letter-spacing:.04em}
+.hero-catch em{font-style:normal;border-bottom:1.5px solid var(--stone-300);padding-bottom:2px}
+.hero-sub{font-size:13px;letter-spacing:.12em;color:var(--stone-500);margin-bottom:24px}
+.hero-lead{font-size:15px;color:var(--stone-900);line-height:2;margin-bottom:32px}
+.hero-photo{width:100%;aspect-ratio:4/5;background:var(--stone-200);border:1px solid var(--line);overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:65% center}
+
+/* FIT */
+.fit-section{}
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
+.fit-card{background:var(--white);border:1px solid var(--line);padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
+.fit-chk{width:18px;height:18px;border:1px solid var(--stone-300);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.fit-text{font-size:14px;color:var(--stone-900);line-height:1.7}
+
+/* BENEFITS */
+.benefit-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line)}
+.benefit-item{display:grid;grid-template-columns:72px 1fr;border-bottom:1px solid var(--line)}
+.benefit-item:last-child{border-bottom:none}
+.benefit-num-col{background:var(--stone-100);display:flex;align-items:center;justify-content:center}
+.benefit-num{font-family:var(--serif);font-size:2rem;font-weight:300;color:var(--stone-300);font-style:italic}
+.benefit-content{padding:24px 28px}
+.benefit-title{font-size:15px;font-weight:500;color:var(--stone-900);margin-bottom:6px}
+.benefit-desc{font-size:14px;color:var(--stone-700);line-height:1.9}
+
+/* WORKS */
+.works-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:16px}
+.stat-item{background:var(--white);padding:24px 28px}
+.stat-label{font-size:12px;letter-spacing:.18em;color:var(--stone-500);margin-bottom:8px}
+.stat-num{font-family:var(--serif);font-size:2.8rem;font-weight:300;color:var(--stone-900);line-height:1;margin-bottom:8px}
+.stat-num span{font-size:1rem;color:var(--stone-500);margin:0 4px}
+.stat-desc{font-size:14px;color:var(--stone-700);line-height:1.9}
+.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:14px}
+.chart-item{background:var(--white);padding:18px 22px}
+.chart-label{font-size:12px;letter-spacing:.14em;color:var(--stone-500);margin-bottom:10px}
+.note-box{padding:16px 20px;background:var(--stone-100);border-left:2px solid var(--stone-300);font-size:14px;color:var(--stone-700);line-height:1.9;margin-bottom:20px}
+.other-title{font-size:12px;letter-spacing:.2em;color:var(--stone-500);margin-bottom:10px;text-transform:uppercase}
+.other-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.other-item{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--stone-700)}
+.chk-sm{width:16px;height:16px;border:1px solid var(--stone-300);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+
+/* WORKS ギャラリー */
+.works-common-note{font-size:12px;color:var(--stone-500);margin-bottom:14px;padding:10px 14px;background:var(--stone-100);border-left:2px solid var(--stone-300)}
+.works-cat-label{font-size:12px;letter-spacing:.2em;color:var(--stone-700);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line);text-transform:uppercase}
+.works-cat{margin-bottom:40px}
+.works-cat:last-child{margin-bottom:0}
+.img-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.img-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.img-grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.img-card{display:flex;flex-direction:column;gap:6px}
+.img-thumb{background:var(--stone-200);border:1px solid var(--line);overflow:hidden}
+.img-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.img-thumb-sq{aspect-ratio:1/1}
+.img-thumb-ig{aspect-ratio:4/5}
+.img-thumb-apparel{aspect-ratio:1672/941}
+.img-thumb-farm{aspect-ratio:1920/600}
+.img-thumb-richmenu{aspect-ratio:2500/1686}
+.img-thumb-linemsg{aspect-ratio:1080/1080}
+.img-thumb-linecard{aspect-ratio:1322/1190}
+.img-thumb-wide{aspect-ratio:16/9}
+.img-thumb-lp{aspect-ratio:2/3}
+.img-thumb-line{aspect-ratio:16/9}
+.vid-thumb{aspect-ratio:9/16;background:var(--stone-900);border:1px solid var(--line);overflow:hidden}
+.vid-thumb video{width:100%;height:100%;object-fit:cover;display:block}
+.img-client{font-size:12px;letter-spacing:.08em;color:var(--stone-500)}
+.img-work{font-size:13px;color:var(--stone-700);line-height:1.6;font-weight:400}
+
+/* LP */
+.lp-list{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line)}
+.lp-item{display:grid;grid-template-columns:1fr 1fr auto;align-items:center;gap:16px;padding:18px 20px;background:var(--white)}
+.lp-client{font-size:15px;font-weight:500;color:var(--stone-900)}
+.lp-work{font-size:13px;color:var(--stone-700)}
+.lp-note{font-size:12px;color:var(--stone-300);white-space:nowrap}
+
+/* CASE STUDY */
+.case-grid{display:grid;grid-template-columns:1fr 40px 1fr;border:1px solid var(--line);margin-bottom:16px}
+.case-col{padding:24px 26px}
+.case-before{background:var(--stone-100)}
+.case-after{background:var(--white)}
+.case-arrow-col{display:flex;align-items:center;justify-content:center;background:var(--stone-200)}
+.case-label{font-size:12px;letter-spacing:.2em;color:var(--stone-500);margin-bottom:14px;text-transform:uppercase}
+.case-point{font-size:14px;color:var(--stone-700);margin-bottom:8px;padding-left:14px;position:relative;line-height:1.7}
+.case-point::before{content:"·";position:absolute;left:0;color:var(--stone-300)}
+.case-img-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:16px}
+.case-img{background:var(--stone-200);border:1px solid var(--line);overflow:hidden}
+.case-img img{width:100%;height:auto;display:block;object-fit:contain}
+.case-improved{border:1px solid var(--line)}
+.case-imp-title{font-size:12px;letter-spacing:.15em;color:var(--stone-500);padding:10px 16px;border-bottom:1px solid var(--line);background:var(--stone-100);text-transform:uppercase}
+.case-imp-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.case-imp-item{background:var(--white);padding:12px 16px;display:flex;align-items:center;gap:10px;font-size:14px;color:var(--stone-700)}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.svc-item{background:var(--white);padding:20px 18px}
+.svc-name{font-size:14px;font-weight:500;color:var(--stone-900);margin-bottom:4px}
+.svc-desc{font-size:13px;color:var(--stone-700);line-height:1.6}
+
+/* PRICE */
+.price-note{font-size:14px;color:var(--stone-700);margin-bottom:28px;line-height:1.9;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.price-block{margin-bottom:32px}
+.price-cat{font-size:11px;letter-spacing:.25em;color:var(--white);background:var(--stone-700);padding:6px 14px;display:inline-block;margin-bottom:0;text-transform:uppercase}
+.ptable{width:100%;border-collapse:collapse;border:1px solid var(--line)}
+.ptable tr{border-bottom:1px solid var(--line)}
+.ptable tr:last-child{border-bottom:none}
+.ptable tr:nth-child(even) td{background:var(--stone-100)}
+.ptable th{font-size:12px;letter-spacing:.1em;color:var(--stone-500);font-weight:400;text-align:left;padding:10px 16px;border-bottom:2px solid var(--stone-300);background:var(--stone-200)}
+.ptable td{padding:16px 16px;font-size:14px;color:var(--stone-700);vertical-align:middle;line-height:1.6;background:var(--white)}
+.td-name{color:var(--stone-900);font-weight:500;font-size:15px}
+.td-price{font-weight:700;color:var(--accent);font-size:1.15rem;display:block;letter-spacing:.02em}
+.td-sub{font-size:12px;color:var(--stone-500);display:block;margin-top:4px;line-height:1.6}
+.price-footer{margin-top:20px;padding:18px 22px;background:var(--stone-100);border-left:2px solid var(--stone-300);font-size:14px;color:var(--stone-700);line-height:1.9}
+
+/* FLOW */
+.flow-list{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.flow-item{background:var(--white);padding:24px 20px}
+.flow-num{font-family:var(--serif);font-size:2.2rem;font-weight:300;color:var(--stone-200);margin-bottom:12px;font-style:italic}
+.flow-title{font-size:14px;font-weight:500;color:var(--stone-900);margin-bottom:8px}
+.flow-desc{font-size:14px;color:var(--stone-700);line-height:1.8}
+
+/* PROFILE */
+.profile-card{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.profile-main{background:var(--white);padding:32px 32px}
+.profile-sub{background:var(--stone-100);padding:32px 32px}
+.profile-name{font-family:var(--serif-jp);font-size:1.5rem;font-weight:300;color:var(--stone-900);margin-bottom:2px}
+.profile-name-en{font-family:var(--serif);font-size:12px;color:var(--stone-500);margin-bottom:20px;letter-spacing:.12em}
+.profile-desc{font-size:14px;color:var(--stone-700);line-height:2;margin-bottom:20px}
+.profile-tags{display:flex;flex-wrap:wrap;gap:6px}
+.p-tag{font-size:12px;color:var(--stone-500);border:1px solid var(--line);padding:4px 12px}
+.tools-title{font-size:12px;letter-spacing:.2em;color:var(--stone-500);margin-bottom:16px;text-transform:uppercase}
+.tool-item{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--stone-700);margin-bottom:10px}
+.tool-dot{width:5px;height:5px;background:var(--stone-300);border-radius:50%;flex-shrink:0}
+
+/* CONTACT */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.contact-main{background:var(--white);padding:48px 40px}
+.contact-lead{font-family:var(--serif-jp);font-size:1.8rem;font-weight:300;color:var(--stone-900);line-height:1.6;margin-bottom:14px}
+.contact-sub{font-size:14px;color:var(--stone-700);line-height:1.9;margin-bottom:36px}
+.contact-info{background:var(--stone-100);padding:48px 40px}
+.contact-info-title{font-size:12px;letter-spacing:.2em;color:var(--stone-500);margin-bottom:28px;text-transform:uppercase}
+.contact-link-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px}
+.contact-link-label{font-size:12px;letter-spacing:.15em;color:var(--stone-500);width:50px;flex-shrink:0;padding-top:3px;text-transform:uppercase}
+.contact-link-val{font-size:15px;color:var(--stone-700)}
+
+/* FOOTER */
+footer{padding:28px 32px;max-width:800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.footer-name{font-family:var(--serif);font-size:.9rem;font-weight:300;color:var(--stone-500);letter-spacing:.1em}
+.footer-copy{font-size:12px;color:var(--stone-300);letter-spacing:.08em}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(30,27,23,.6);z-index:100;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:var(--white);padding:40px;max-width:420px;width:90%;max-height:80vh;overflow-y:auto}
+.modal-title{font-family:var(--serif-jp);font-size:1.1rem;font-weight:300;color:var(--stone-900);margin-bottom:8px}
+.modal-lead{font-size:13px;color:var(--stone-500);margin-bottom:24px;line-height:1.8}
+.quiz-opts{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.quiz-opt{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--line);font-size:14px;color:var(--stone-700);cursor:pointer;transition:all .15s;background:var(--bg)}
+.quiz-opt:hover{border-color:var(--stone-300);background:var(--white)}
+.quiz-opt input{accent-color:var(--stone-700)}
+.quiz-btn{font-size:12px;letter-spacing:.2em;color:var(--stone-700);border:1px solid var(--stone-300);padding:10px 24px;background:none;font-family:var(--sans);cursor:pointer;transition:all .2s}
+.quiz-btn:hover{background:var(--stone-900);color:var(--white);border-color:var(--stone-900)}
+.quiz-result{display:none;margin-top:20px;padding:20px;background:var(--stone-100);font-size:14px;color:var(--stone-700);line-height:1.9;border-left:2px solid var(--stone-300)}
+.quiz-result.show{display:block}
+.modal-close{margin-top:16px;font-size:12px;letter-spacing:.15em;color:var(--stone-500);background:none;border:none;cursor:pointer;font-family:var(--sans);padding:0;display:block}
+.modal-close:hover{color:var(--stone-900)}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .hero-inner{grid-template-columns:1fr;gap:32px}
+  .hero-photo{aspect-ratio:4/3;order:-1;margin-right:0}
+  .fit-grid{grid-template-columns:1fr}
+  .benefit-item{grid-template-columns:1fr}
+  .benefit-num-col{padding:12px;justify-content:flex-start}
+  .works-stats{grid-template-columns:1fr}
+  .chart-grid{grid-template-columns:1fr}
+  .other-grid{grid-template-columns:1fr}
+  .img-grid-3{grid-template-columns:repeat(2,1fr)}
+  .img-grid-5{grid-template-columns:repeat(2,1fr)}
+  .case-grid{grid-template-columns:1fr}
+  .case-arrow-col{display:none}
+  .case-imp-grid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .flow-list{grid-template-columns:1fr 1fr}
+  .profile-card{grid-template-columns:1fr}
+  .contact-wrap{grid-template-columns:1fr}
+  .wrap,.nav-inner,footer{padding-left:20px;padding-right:20px}
+  section{padding:48px 0}
+  .hero{padding:56px 0 48px}
+  .ptable th:nth-child(2),.ptable td:nth-child(2){display:none}
+  .ptable th:nth-child(1),.ptable td:nth-child(1){width:50%}
+  .ptable th:nth-child(3),.ptable td:nth-child(3){width:50%}
+  nav .nav-links{display:none}
+  .img-grid-2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">Nana Asahina</span>
+    <ul class="nav-links">
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#works">Works</a></li>
+      <li><a href="#casestudy">Case</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#flow">Flow</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Freelance Web Marketing &amp; Creative</div>
+      <h1 class="hero-catch">相談から、結果まで。<br><em>全部一緒に。</em></h1>
+      <p class="hero-sub">朝比奈 奈々 — Nana Asahina</p>
+      <p class="hero-lead">SNS・広告・LP・EC・動画・業務改善まで、<br>幅広く・丁寧に・一緒に走ります。<br>「何から頼めばいいか分からない」という段階から、<br>お気軽にご相談ください。</p>
+      <a class="btn btn-fill" href="#contact">まずはご相談ください</a>
+    </div>
+    <div class="hero-photo">
+      <img src="image/profile.png" alt="朝比奈 奈々">
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE -->
+<section id="profile">
+  <div class="wrap">
+    <div class="sh">
+      <span class="sh-en">Profile</span>
+      <span class="sh-jp">プロフィール</span>
+
+    </div>
+    <div class="profile-card">
+      <div class="profile-main">
+        <div class="profile-name">朝比奈 奈々</div>
+        <div class="profile-name-en">Nana Asahina</div>
+        <p class="profile-desc">千葉在住。パン屋・外構設計・ハウスメーカー経理・EC業務・エンジニア補助など、さまざまな現場を経験してきました。フリーランスのきっかけは、前職の同僚から「SNS運用、できない？」と相談されたこと。仕事ぶりを評価してもらえて声をかけてもらえたことが、今も大切なモチベーションです。どんな仕事も一つひとつ丁寧に向き合うことが、自分らしさだと思っています。</p>
+        <div class="profile-tags">
+          <span class="p-tag">販売・接客</span>
+          <span class="p-tag">外構・設計</span>
+          <span class="p-tag">経理事務</span>
+          <span class="p-tag">EC業務</span>
+          <span class="p-tag">エンジニア補助</span>
+          <span class="p-tag">SNS運用</span>
+        </div>
+      </div>
+      <div class="profile-sub">
+        <div class="tools-title">使用ツール</div>
+        <div class="tool-item"><span class="tool-dot"></span>Canva</div>
+        <div class="tool-item"><span class="tool-dot"></span>CapCut</div>
+        <div class="tool-item"><span class="tool-dot"></span>Google Analytics 4 / GTM</div>
+        <div class="tool-item"><span class="tool-dot"></span>Google Apps Script</div>
+        <div class="tool-item"><span class="tool-dot"></span>Google Search Console</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="benefits">
+  <div class="wrap">
+    <div class="sh">
+      <span class="sh-en">Benefits</span>
+      <span class="sh-jp">依頼するメリット</span>
+
+    </div>
+    <div class="benefit-list">
+      <div class="benefit-item">
+        <div class="benefit-num-col"><span class="benefit-num">01</span></div>
+        <div class="benefit-content">
+          <div class="benefit-title">窓口ひとつで、複数の仕事が完結する</div>
+          <div class="benefit-desc">SNS運用・広告・LP・動画・業務改善まで対応しています。「この人に言えばなんとかなる」という安心感のもと、複数業者への連絡コストを大幅に削減できます。</div>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-num-col"><span class="benefit-num">02</span></div>
+        <div class="benefit-content">
+          <div class="benefit-title">相談から、一緒に考えます</div>
+          <div class="benefit-desc">「何が課題かよく分からない」という段階から話を聞きます。依頼の形が決まっていなくてもOK。整理することから一緒に始めましょう。</div>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-num-col"><span class="benefit-num">03</span></div>
+        <div class="benefit-content">
+          <div class="benefit-title">小さな仕事ほど、丁寧に</div>
+          <div class="benefit-desc">「こんな些細なこと…」と遠慮しないでください。小さな依頼ほど誠実に受け止めます。「頼みやすい」と思ってもらえることが、一番のモットーです。</div>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-num-col"><span class="benefit-num">04</span></div>
+        <div class="benefit-content">
+          <div class="benefit-title">現場経験が豊富だから、話が早い</div>
+          <div class="benefit-desc">経理・EC・販売、設計図作成など多業種での実務経験があります。そのため、現場での課題感をイメージしながら提案することができ、「分かってもらえた」と感じていただけることが多いです。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS フォロワー実績 -->
+<section id="works">
+  <div class="wrap">
+    <div class="sh">
+      <span class="sh-en">Works</span>
+      <span class="sh-jp">制作実績</span>
+
+    </div>
+    <div class="works-stats">
+      <div class="stat-item">
+        <div class="stat-label">実績例① / フォロワー推移</div>
+        <div class="stat-num">200<span>→</span>6,500<span style="font-size:1rem">人</span></div>
+        <div class="stat-desc">長期的に価値のあるアカウントづくりを重視。コンテンツの質を高め、エンゲージメントを通じてフォロワーが着実に増加。</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">実績例② / フォロワー推移</div>
+        <div class="stat-num">200<span>→</span>4,500<span style="font-size:1rem">人</span></div>
+        <div class="stat-desc">世界観設計・企画・ターゲットを明確化。コンテンツ設計・投稿の最適化を実施。継続的な運用でフォロワーを大幅に拡大。</div>
+      </div>
+    </div>
+    <div class="chart-grid">
+      <div class="chart-item">
+        <div class="chart-label">実績例① — 2年間の推移</div>
+        <svg width="100%" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+          <line x1="36" y1="8" x2="36" y2="95" stroke="#D4CFC8" stroke-width="0.5"/>
+          <line x1="36" y1="95" x2="290" y2="95" stroke="#D4CFC8" stroke-width="0.5"/>
+          <line x1="36" y1="8" x2="290" y2="8" stroke="#E2DDD4" stroke-width="0.3" stroke-dasharray="3,3"/>
+          <line x1="36" y1="31" x2="290" y2="31" stroke="#E2DDD4" stroke-width="0.3" stroke-dasharray="3,3"/>
+          <line x1="36" y1="54" x2="290" y2="54" stroke="#E2DDD4" stroke-width="0.3" stroke-dasharray="3,3"/>
+          <line x1="36" y1="77" x2="290" y2="77" stroke="#E2DDD4" stroke-width="0.3" stroke-dasharray="3,3"/>
+          <text x="32" y="11" text-anchor="end" font-size="8" fill="#8A8278">7k</text>
+          <text x="32" y="34" text-anchor="end" font-size="8" fill="#8A8278">5k</text>
+          <text x="32" y="57" text-anchor="end" font-size="8" fill="#8A8278">3k</text>
+          <text x="32" y="80" text-anchor="end" font-size="8" fill="#8A8278">1k</text>
+          <text x="32" y="98" text-anchor="end" font-size="8" fill="#8A8278">0</text>
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8A8278" stop-opacity="0.12"/><stop offset="100%" stop-color="#8A8278" stop-opacity="0.01"/></linearGradient></defs>
+          <polygon points="36,92.7 66,89.7 96,85 126,78.6 156,69.2 186,56.3 216,42.4 246,29.5 276,19.3 276,95 36,95" fill="url(#g1)"/>
+          <polyline points="36,92.7 66,89.7 96,85 126,78.6 156,69.2 186,56.3 216,42.4 246,29.5 276,19.3" fill="none" stroke="#8A8278" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="36" cy="92.7" r="2.5" fill="#8A8278"/>
+          <circle cx="276" cy="19.3" r="2.5" fill="#8A8278"/>
+          <text x="36" y="109" text-anchor="middle" font-size="8" fill="#8A8278">開始</text>
+          <text x="96" y="109" text-anchor="middle" font-size="8" fill="#8A8278">6ヶ月</text>
+          <text x="156" y="109" text-anchor="middle" font-size="8" fill="#8A8278">1年</text>
+          <text x="216" y="109" text-anchor="middle" font-size="8" fill="#8A8278">1年6ヶ月</text>
+          <text x="276" y="109" text-anchor="middle" font-size="8" fill="#8A8278">2年</text>
+        </svg>
+      </div>
+      <div class="chart-item">
+        <div class="chart-label">実績例② — 2年間の推移</div>
+        <svg width="100%" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+          <line x1="36" y1="8" x2="36" y2="95" stroke="#D4CFC8" stroke-width="0.5"/>
+          <line x1="36" y1="95" x2="290" y2="95" stroke="#D4CFC8" stroke-width="0.5"/>
+          <line x1="36" y1="8" x2="290" y2="8" stroke="#E2DDD4" stroke-width="0.3" stroke-dasharray="3,3"/>
+          <line x1="36" y1="31" x2="290" y2="31" stroke="#E2DDD4" stroke-width="0.3" stroke-dasharray="3,3"/>
+          <line x1="36" y1="54" x2="290" y2="54" stroke="#E2DDD4" stroke-width="0.3" stroke-dasharray="3,3"/>
+          <line x1="36" y1="77" x2="290" y2="77" stroke="#E2DDD4" stroke-width="0.3" stroke-dasharray="3,3"/>
+          <text x="32" y="11" text-anchor="end" font-size="8" fill="#8A8278">5k</text>
+          <text x="32" y="34" text-anchor="end" font-size="8" fill="#8A8278">3.7k</text>
+          <text x="32" y="57" text-anchor="end" font-size="8" fill="#8A8278">2.5k</text>
+          <text x="32" y="80" text-anchor="end" font-size="8" fill="#8A8278">1.2k</text>
+          <text x="32" y="98" text-anchor="end" font-size="8" fill="#8A8278">0</text>
+          <defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4A453E" stop-opacity="0.12"/><stop offset="100%" stop-color="#4A453E" stop-opacity="0.01"/></linearGradient></defs>
+          <polygon points="36,91.7 66,88.8 96,84.8 126,79.4 156,72 186,60.6 216,47.4 246,34.3 276,21.2 276,95 36,95" fill="url(#g2)"/>
+          <polyline points="36,91.7 66,88.8 96,84.8 126,79.4 156,72 186,60.6 216,47.4 246,34.3 276,21.2" fill="none" stroke="#4A453E" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="36" cy="91.7" r="2.5" fill="#4A453E"/>
+          <circle cx="276" cy="21.2" r="2.5" fill="#4A453E"/>
+          <text x="36" y="109" text-anchor="middle" font-size="8" fill="#8A8278">開始</text>
+          <text x="96" y="109" text-anchor="middle" font-size="8" fill="#8A8278">6ヶ月</text>
+          <text x="156" y="109" text-anchor="middle" font-size="8" fill="#8A8278">1年</text>
+          <text x="216" y="109" text-anchor="middle" font-size="8" fill="#8A8278">1年6ヶ月</text>
+          <text x="276" y="109" text-anchor="middle" font-size="8" fill="#8A8278">2年</text>
+        </svg>
+      </div>
+    </div>
+    <div class="note-box">急激な数値上昇ではなく、クライアントが必要とするエリア・ターゲット層への着実なリーチを優先した運用結果です。数より質を重視した継続運用により、見込み顧客に届くフォロワーを積み上げています。</div>
+    <div class="other-title">その他の実績</div>
+    <div class="other-grid">
+      <div class="other-item"><span class="chk-sm"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="#8A8278" stroke-width="1.5"><polyline points="1,4 3,6 7,2"/></svg></span>SNS運用代行・マネージャー（6アカウント担当）</div>
+      <div class="other-item"><span class="chk-sm"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="#8A8278" stroke-width="1.5"><polyline points="1,4 3,6 7,2"/></svg></span>広告運用・バナー制作</div>
+      <div class="other-item"><span class="chk-sm"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="#8A8278" stroke-width="1.5"><polyline points="1,4 3,6 7,2"/></svg></span>YouTube運用・台本制作</div>
+      <div class="other-item"><span class="chk-sm"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="#8A8278" stroke-width="1.5"><polyline points="1,4 3,6 7,2"/></svg></span>分析レポート作成・改善提案</div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS Instagram -->
+<section>
+  <div class="wrap">
+    <div class="sh">
+      <span class="sh-en">Works</span>
+      <span class="sh-jp">SNS 運用代行 — Instagram</span>
+
+    </div>
+    <div class="works-cat">
+      <div class="works-cat-label">SNS 運用代行 — Instagram</div>
+      <p class="works-common-note">全アカウント共通：投稿デザイン・キャプション・ハッシュタグ選定・プロフィール設計・分析・施策提案</p>
+      <div class="img-grid-3">
+        <div class="img-card"><div class="img-thumb img-thumb-ig"><img src="image/instagram_01.png" alt="工務店 Instagram投稿"></div><div class="img-client">工務店</div><div class="img-work">＋月次レポート</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-ig"><img src="image/instagram_02.png" alt="工務店 Instagram投稿"></div><div class="img-client">工務店</div><div class="img-work">＋月次レポート</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-ig"><img src="image/instagram_03.png" alt="FX Instagram投稿"></div><div class="img-client">FX</div><div class="img-work">＋月次レポート・月次MTG</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-ig"><img src="image/instagram_04.png" alt="ハウスメーカー Instagram投稿"></div><div class="img-client">ハウスメーカー</div><div class="img-work">＋月次レポート・月次MTG</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-ig"><img src="image/instagram_05.png" alt="リフォーム会社 Instagram投稿"></div><div class="img-client">リフォーム会社</div><div class="img-work">※画像はコンテンツ2枚目</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-ig"><img src="image/instagram_06.png" alt="動物用サプリ開発会社 Instagram投稿"></div><div class="img-client">動物用サプリ開発会社</div><div class="img-work">※画像はコンテンツ2枚目</div></div>
+      </div>
+    </div>
+    <div class="works-cat">
+      <div class="works-cat-label">広告クリエイティブ — Meta / Google</div>
+      <div class="img-grid-3">
+        <div class="img-card"><div class="img-thumb img-thumb-sq"><img src="image/adbn_01.png" alt="Meta広告 / 工務店"></div><div class="img-client">Meta広告 / 工務店</div><div class="img-work">静止画バナー 2サイズ展開</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-sq"><img src="image/adbn_02.png" alt="Meta広告 / 有名大学"></div><div class="img-client">Meta広告 / 有名大学</div><div class="img-work">静止画バナー 2サイズ展開</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-sq"><img src="image/adbn_03.png" alt="Meta広告 / 住宅メーカー"></div><div class="img-client">Meta広告 / 住宅メーカー</div><div class="img-work">静止画バナー 2サイズ展開</div></div>
+      </div>
+    </div>
+    <div class="works-cat">
+      <div class="works-cat-label">HP クリエイティブ</div>
+      <div class="img-grid-2">
+        <div class="img-card"><div class="img-thumb img-thumb-apparel"><img src="image/hpbn_01.png" alt="ECサイト / アパレル"></div><div class="img-client">ECサイト / アパレル</div><div class="img-work">デザイン</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-apparel"><img src="image/hpbn_02.png" alt="ECサイト / アパレル"></div><div class="img-client">ECサイト / アパレル</div><div class="img-work">デザイン</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-farm"><img src="image/hpbn_03.png" alt="HP / 農園"></div><div class="img-client">HP / 農園</div><div class="img-work">デザイン＋コーディング</div></div>
+      </div>
+    </div>
+    <div class="works-cat">
+      <div class="works-cat-label">LINE クリエイティブ — リッチメニュー / メッセージ</div>
+      <div class="img-grid-2" style="margin-bottom:16px">
+        <div class="img-card"><div class="img-thumb img-thumb-richmenu"><img src="image/line-richmenu_01.png" alt="LINEリッチメニュー / 食品"></div><div class="img-client">LINEリッチメニュー / 食品</div><div class="img-work">デザイン・実装</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-richmenu"><img src="image/line-richmenu_02.png" alt="LINEリッチメニュー / アパレル"></div><div class="img-client">LINEリッチメニュー / アパレル</div><div class="img-work">デザイン・実装</div></div>
+      </div>
+      <div class="img-grid-3">
+        <div class="img-card"><div class="img-thumb img-thumb-linemsg"><img src="image/line-message_01.png" alt="LINEメッセージ / アパレル"></div><div class="img-client">LINEメッセージ / アパレル</div><div class="img-work">デザイン・メッセージ配信</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-linemsg"><img src="image/line-message_02.png" alt="LINEメッセージ / アパレル"></div><div class="img-client">LINEメッセージ / アパレル</div><div class="img-work">デザイン・メッセージ配信</div></div>
+        <div class="img-card"><div class="img-thumb img-thumb-linecard"><img src="image/line-message-card_01.png" alt="LINEメッセージカード / アパレル"></div><div class="img-client">LINEメッセージカード / アパレル</div><div class="img-work">デザイン・メッセージ配信</div></div>
+      </div>
+    </div>
+    <div class="works-cat">
+      <div class="works-cat-label">LP 制作</div>
+      <div class="lp-list">
+        <div class="lp-item"><span class="lp-client">LP / 借上サービス</span><span class="lp-work">デザイン＋コーディング・広告運用とセット納品</span><span class="lp-note">※画像は非公開</span></div>
+        <div class="lp-item"><span class="lp-client">LP / 民泊代行</span><span class="lp-work">デザイン＋コーディング・広告運用とセット納品</span><span class="lp-note">※画像は非公開</span></div>
+      </div>
+    </div>
+    <div class="works-cat">
+      <div class="works-cat-label">動画制作 — SNS / ショート</div>
+      <div class="img-grid-3">
+        <div class="img-card"><div class="vid-thumb"><video src="image/short-movie_01.mp4" controls playsinline muted loop></video></div><div class="img-client">SNS / キャンプ飯</div><div class="img-work">編集・字幕・音声</div></div>
+        <div class="img-card"><div class="vid-thumb"><video src="image/short-movie_02.mp4" controls playsinline muted loop></video></div><div class="img-client">SNS / キャンプ飯</div><div class="img-work">編集・字幕・音声</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section id="casestudy">
+  <div class="wrap">
+    <div class="sh">
+      <span class="sh-en">Case Study</span>
+      <span class="sh-jp">運用改善の一例</span>
+
+    </div>
+    <div class="case-grid">
+      <div class="case-col case-before">
+        <div class="case-label">Before</div>
+        <div class="case-point">投稿のテイストがバラバラ</div>
+        <div class="case-point">ターゲットが曖昧</div>
+        <div class="case-point">プロフィールが最適化されていない</div>
+        <div class="case-img-grid">
+          <div class="case-img" style="grid-column:1/-1"><img src="image/case-study_before.jpg" alt="改善前"></div>
+        </div>
+      </div>
+      <div class="case-arrow-col">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#8A8278" stroke-width="1.5"><line x1="2" y1="8" x2="14" y2="8"/><polyline points="9,3 14,8 9,13"/></svg>
+      </div>
+      <div class="case-col case-after">
+        <div class="case-label">After</div>
+        <div class="case-point">世界観を統一し、ブランドの魅力を明確化</div>
+        <div class="case-point">ターゲットに合わせたコンテンツ設計</div>
+        <div class="case-point">プロフィールや導線を最適化し、集客につながる</div>
+        <div class="case-img-grid">
+          <div class="case-img" style="grid-column:1/-1"><img src="image/case-study_after.jpg" alt="改善後"></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-improved">
+      <div class="case-imp-title">改善したこと</div>
+      <div class="case-imp-grid">
+        <div class="case-imp-item"><span class="chk-sm"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="#8A8278" stroke-width="1.5"><polyline points="1,4 3,6 7,2"/></svg></span>ブランドの統一・ターゲットを明確化</div>
+        <div class="case-imp-item"><span class="chk-sm"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="#8A8278" stroke-width="1.5"><polyline points="1,4 3,6 7,2"/></svg></span>プロフィール・ハイライト設計</div>
+        <div class="case-imp-item"><span class="chk-sm"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="#8A8278" stroke-width="1.5"><polyline points="1,4 3,6 7,2"/></svg></span>世界観設計・トーンの統一</div>
+        <div class="case-imp-item"><span class="chk-sm"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="#8A8278" stroke-width="1.5"><polyline points="1,4 3,6 7,2"/></svg></span>導線設計・CTA改善</div>
+        <div class="case-imp-item"><span class="chk-sm"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="#8A8278" stroke-width="1.5"><polyline points="1,4 3,6 7,2"/></svg></span>コンテンツ設計・投稿改善</div>
+        <div class="case-imp-item"><span class="chk-sm"><svg width="8" height="8" viewBox="0 0 8 8" fill="none" stroke="#8A8278" stroke-width="1.5"><polyline points="1,4 3,6 7,2"/></svg></span>分析に基づく継続的な改善</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sh">
+      <span class="sh-en">Services</span>
+      <span class="sh-jp">対応サービス</span>
+
+    </div>
+    <div class="svc-grid">
+      <div class="svc-item"><div class="svc-name">SNS 運用代行</div><div class="svc-desc">投稿・分析・改善</div></div>
+      <div class="svc-item"><div class="svc-name">広告運用代行</div><div class="svc-desc">Meta / Google 広告（他媒体も可）</div></div>
+      <div class="svc-item"><div class="svc-name">LP 制作</div><div class="svc-desc">ランディングページ</div></div>
+      <div class="svc-item"><div class="svc-name">広告クリエイティブ</div><div class="svc-desc">バナー・動画広告</div></div>
+      <div class="svc-item"><div class="svc-name">EC 商品ページ制作</div><div class="svc-desc">テキスト＋クリエイティブ込み</div></div>
+      <div class="svc-item"><div class="svc-name">LINE 運用代行</div><div class="svc-desc">配信・シナリオ設計</div></div>
+      <div class="svc-item"><div class="svc-name">動画制作</div><div class="svc-desc">編集・構成から対応</div></div>
+      <div class="svc-item"><div class="svc-name">GAS 作成</div><div class="svc-desc">業務自動化スクリプト</div></div>
+      <div class="svc-item"><div class="svc-name">業務改善</div><div class="svc-desc">軽微なフロー改善</div></div>
+      <div class="svc-item"><div class="svc-name">HP 解析</div><div class="svc-desc">GA4・サイト分析</div></div>
+      <div class="svc-item"><div class="svc-name">イベント設定</div><div class="svc-desc">GTM・タグ設定</div></div>
+      <div class="svc-item" style="background:var(--stone-100)"><div class="svc-name" style="color:var(--stone-500)">その他</div><div class="svc-desc">お気軽にご相談ください</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section id="flow">
+  <div class="wrap">
+    <div class="sh">
+      <span class="sh-en">Work Flow</span>
+      <span class="sh-jp">ご依頼の流れ</span>
+
+    </div>
+    <div class="flow-list">
+      <div class="flow-item"><div class="flow-num">01</div><div class="flow-title">ご相談</div><div class="flow-desc">「こんなこと頼んでいい？」という段階でOK。返信は基本24時間以内。</div></div>
+      <div class="flow-item"><div class="flow-num">02</div><div class="flow-title">ヒアリング・見積もり</div><div class="flow-desc">目的や課題を丁寧にヒアリングし、内容と金額をご提案します。</div></div>
+      <div class="flow-item"><div class="flow-num">03</div><div class="flow-title">制作・運用スタート</div><div class="flow-desc">進捗はこまめに共有。途中の変更もお気軽にご相談ください。</div></div>
+      <div class="flow-item"><div class="flow-num">04</div><div class="flow-title">納品・フォロー</div><div class="flow-desc">納品後もフォロー可能。小さな疑問もお気軽にどうぞ。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="border-bottom:none">
+  <div class="wrap">
+    <div class="contact-wrap">
+      <div class="contact-main">
+        <p class="contact-lead">ご相談・ご依頼は<br>お気軽にどうぞ。</p>
+        <p class="contact-sub">決まっていなくて大丈夫です。<br>「なんとなく相談したい」で十分です。</p>
+        <!-- ▼ リンク先を変更してください -->
+        <a class="btn btn-fill" href="mailto:naaaaa.ay216@gmail.com">メールで問い合わせる</a>
+      </div>
+      <div class="contact-info">
+        <div class="contact-info-title">Contact</div>
+        <div class="contact-link-item">
+          <span class="contact-link-label">Mail</span>
+          <span class="contact-link-val">naaaaa.ay216@gmail.com</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Nana Asahina</span>
+  <span class="footer-copy">&copy; 2026 Nana Asahina. All rights reserved.</span>
+</footer>
+
+<!-- FIT MODAL -->
+<div class="modal-overlay" id="fit-modal">
+  <div class="modal">
+    <h3 class="modal-title">自分に合うか確かめる</h3>
+    <p class="modal-lead">依頼するときに一番気になることを選んでください。</p>
+    <div class="quiz-opts">
+      <label class="quiz-opt"><input type="radio" name="q1" value="a"> 相談のしやすさ・人柄</label>
+      <label class="quiz-opt"><input type="radio" name="q1" value="b"> 実績・スキルの幅</label>
+      <label class="quiz-opt"><input type="radio" name="q1" value="c"> スピードと価格</label>
+      <label class="quiz-opt"><input type="radio" name="q1" value="d"> 細かい要望への対応力</label>
+    </div>
+    <button class="quiz-btn" onclick="showResult()">確認する</button>
+    <div class="quiz-result" id="quiz-ok"><strong>フィットしそうです。</strong><br>相談しやすさ・幅広い対応・丁寧さを大切にしています。「一緒に進めたい」という方との仕事を得意としています。ぜひお気軽にご連絡ください。</div>
+    <div class="quiz-result" id="quiz-ng"><strong>まずは話してみましょう。</strong><br>スピード重視・価格最優先の案件は、得意分野が異なる場合もあります。ただ、一度ご相談いただくと合う部分が見つかることも多いです。</div>
+    <br>
+    <button class="modal-close" onclick="document.getElementById('fit-modal').classList.remove('open');resetQuiz()">閉じる</button>
+  </div>
+</div>
+
+<script>
+function showResult(){
+  var val=document.querySelector('input[name="q1"]:checked');
+  if(!val){alert('選択してください');return;}
+  document.getElementById('quiz-ok').classList.remove('show');
+  document.getElementById('quiz-ng').classList.remove('show');
+  if(val.value==='c'){document.getElementById('quiz-ng').classList.add('show');}
+  else{document.getElementById('quiz-ok').classList.add('show');}
+}
+function resetQuiz(){
+  document.querySelectorAll('input[name="q1"]').forEach(function(r){r.checked=false;});
+  document.getElementById('quiz-ok').classList.remove('show');
+  document.getElementById('quiz-ng').classList.remove('show');
+}
+document.getElementById('fit-modal').addEventListener('click',function(e){
+  if(e.target===this){this.classList.remove('open');resetQuiz();}
+});
+</script>
+</body>
+</html>
